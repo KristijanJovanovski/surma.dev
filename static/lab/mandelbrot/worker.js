@@ -48,7 +48,7 @@ addEventListener('message', event => {
         sabView[y * width * 4 + x * 4 + 3] = 255;
       }
     }
-    Atomics.wait(hasChanged, 0, 0);
+    Atomics.notify(hasChanged, 0, 0);
     hasChanged[0] = 0;
   }
 });
